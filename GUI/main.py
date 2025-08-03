@@ -77,7 +77,32 @@ class UI(ft.ResponsiveRow):
             col=6,
             bgcolor= ft.Colors.WHITE,
             
-            content=ft.Column()
+            content=ft.Column(
+                # Contenido de la columna 2
+                controls= [
+                    ft.Container(
+                        border_radius=10,
+                        padding=ft.padding.only(right=200),
+                        alignment=ft.alignment.top_left,
+                        content=ft.Container(
+                            bgcolor=self.color_teal,
+                            border_radius=20,
+                            content=ft.Row(
+                                controls=[
+                                    ft.IconButton(icon=ft.Icons.SEARCH),
+                                    ft.TextField(
+                                        hint_text="Buscar",
+                                        width=300,
+                                        border = ft.InputBorder.NONE,
+                                        border_radius=20,
+                                        cursor_color=ft.Colors.BLACK54
+                                    ),
+                                ]
+                            )
+                        )
+                    )
+                ]
+            )
         )
         self.frame_3 = ft.Container(
         #configuracion columna 3
