@@ -1,0 +1,105 @@
+import flet as ft
+
+#clase para la ventana principal de la aplicacion
+class UI(ft.ResponsiveRow):
+    def __init__(self, page):
+        super().__init__(controls=[],expand=True)
+        self.color_teal = "teal"
+        #control switch para cambiar el modo de la aplicacion
+        self.mode_sw = ft.Switch(
+            value=True,
+            thumb_color= "Black",
+            thumb_icon={ft.ControlState.DEFAULT: ft.Icons.LIGHT_MODE,
+                         ft.ControlState.SELECTED: ft.Icons.DARK_MODE},
+            #configuracion del switch
+            on_change=lambda e: page.update()
+        )
+        #Creacion de columnas responsivas
+        self.navigation_container = ft.Container(
+        #configuracion de la barra de navegacion
+            col=1,
+            bgcolor= self.color_teal,
+            border_radius=10,
+            #blur=ft.Blur(sigma_x=10, sigma_y=5),
+            content=ft.Column(
+                # Contenido de la barra de navegación
+                controls=[
+                    #se crean dos contenedores para los iconos de navegacion y boton inferior
+                    ft.Container(
+                        #blur=ft.Blur(sigma_x=10, sigma_y=5),
+                        expand=True,
+                        #configuracion del icono de navegacion
+                        content= ft.NavigationRail(
+                            #Configuracion del navegation rail
+                            selected_index=0,
+                            bgcolor= self.color_teal,
+                            destinations=[
+                                ft.NavigationRailDestination(
+                                    icon=ft.Icons.HOME,
+                                    
+                                ),
+                                ft.NavigationRailDestination(
+                                    icon=ft.Icons.CALENDAR_MONTH_SHARP,
+                                    
+                                ),
+                                ft.NavigationRailDestination(
+                                    icon=ft.Icons.INFO,
+                                    
+                                ),
+                                ft.NavigationRailDestination(
+                                    icon=ft.Icons.SETTINGS,
+                                    
+                                )
+                            ]
+                        )
+                    ),
+
+                    ft.Container(
+                        expand=True,
+                        alignment=ft.alignment.center,
+                        content= ft.Column(
+                            expand=True,
+                            #envia el contenido de la columna al final
+                            alignment=ft.MainAxisAlignment.END,
+                            controls=[ft.IconButton(
+                                icon=ft.Icons.OUTPUT,  
+                        ),
+                        self.mode_sw
+                        ]
+                            
+                    )
+                    ),
+                ]
+            )
+        )
+        self.frame_2 = ft.Container(
+        #configuracion columna 2
+            col=6,
+            bgcolor= ft.Colors.WHITE,
+            
+            content=ft.Column()
+        )
+        self.frame_3 = ft.Container(
+        #configuracion columna 3
+            col=5,
+            bgcolor= ft.Colors.WHITE,
+            
+            content=ft.Column()
+        )
+         # Agregamos los contenedores hijos directamente a self.controls
+        self.controls.extend([
+            self.navigation_container,
+            self.frame_2,
+            self.frame_3
+        ])
+   
+
+def main(page: ft.Page):
+    #tamaño minimo de la ventana
+    page.window_min_width = 800
+    page.window_min_height = 600
+    #tema por defecto del sistema 
+    page.theme_mode = ft.ThemeMode.SYSTEM
+    page.add(UI(page))
+
+ft.app(target=main)
