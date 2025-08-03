@@ -43,6 +43,13 @@ class UI(ft.ResponsiveRow):
                 ]
             )
         )
+        #creacion de contenedores dinamicos
+        self.container_list_1=[self.initial_container_1,]
+        self.container_list_2=[self.initial_container_2,]
+        #se encargar de ir cambiando el contenido de los contenedores dinamicos
+        self.navigation_container1 = ft.Container(content=self.container_list_1[0], expand=True )
+        self.navigation_container2 = ft.Container(content=self.container_list_2[0], expand=True )
+
         #Creacion de columnas responsivas
         self.navigation_container = ft.Container(
         #configuracion de la barra de navegacion
@@ -131,8 +138,8 @@ class UI(ft.ResponsiveRow):
                             )
                         )
                     ),
-                    self.initial_container_1,
-                    self.initial_container_2
+                    self.navigation_container1,
+                    self.navigation_container2,
                 ]
             )
         )
