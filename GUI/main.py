@@ -14,6 +14,35 @@ class UI(ft.ResponsiveRow):
             #configuracion del switch
             on_change=lambda e: page.update()
         )
+        #Creacionde contenedor principal
+        self.initial_container_1 = ft.Container(
+            bgcolor=self.color_teal,
+            border_radius=20,
+            padding=20,
+            content=ft.Column(
+                
+                controls=[
+                    ft.Text("PANEL DE CONTROL"),
+                    ft.Container(
+                        border_radius=20,
+                    )
+                ]
+            )
+        )
+        self.initial_container_2 = ft.Container(
+            bgcolor=self.color_teal,
+            border_radius=20,
+            padding=20,
+            content=ft.Column(
+                
+                controls=[
+                    ft.Text("otro contenedor"),
+                    ft.Container(
+                        border_radius=20,
+                    )
+                ]
+            )
+        )
         #Creacion de columnas responsivas
         self.navigation_container = ft.Container(
         #configuracion de la barra de navegacion
@@ -75,7 +104,7 @@ class UI(ft.ResponsiveRow):
         self.frame_2 = ft.Container(
         #configuracion columna 2
             col=6,
-            bgcolor= ft.Colors.WHITE,
+            #bgcolor= ft.Colors.WHITE,
             
             content=ft.Column(
                 # Contenido de la columna 2
@@ -97,17 +126,20 @@ class UI(ft.ResponsiveRow):
                                         border_radius=20,
                                         cursor_color=ft.Colors.BLACK54
                                     ),
+                                    
                                 ]
                             )
                         )
-                    )
+                    ),
+                    self.initial_container_1,
+                    self.initial_container_2
                 ]
             )
         )
         self.frame_3 = ft.Container(
         #configuracion columna 3
             col=5,
-            bgcolor= ft.Colors.WHITE,
+           # bgcolor= ft.Colors.WHITE,
             
             content=ft.Column()
         )
