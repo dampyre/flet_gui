@@ -217,9 +217,14 @@ class UI(ft.ResponsiveRow):
                     padding=5,
                     border_radius=20,
                     content=ft.Row(
+                        alignment=ft.MainAxisAlignment.SPACE_AROUND,
                         controls=[
+
                             ft.Text("otras cosas"),
                             ft.Dropdown(
+                                border_radius=20,
+                                hint_text="Selecciona una opcion",
+                                width=150,
                                 options=[
                                 ft.dropdown.Option("opcion 1"), 
                                 ft.dropdown.Option("opcion 2"),
