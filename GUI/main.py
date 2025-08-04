@@ -72,7 +72,35 @@ class UI(ft.ResponsiveRow):
                 ]
             )
         )
-        
+        #contenedores terciarios
+        self.calendar_container_1 = ft.Container(
+            bgcolor=self.color_teal,
+            border_radius=20,
+            padding=20,
+            content=ft.Column(
+                
+                controls=[
+                    ft.Text("Calendario - dia"),
+                    ft.Container(
+                        border_radius=20,
+                    )
+                ]
+            )
+        )
+        self.calendar_container_2= ft.Container(
+            bgcolor=self.color_teal,
+            border_radius=20,
+            padding=20,
+            content=ft.Column(
+                
+                controls=[
+                    ft.Text("Calendario- semana"),
+                    ft.Container(
+                        border_radius=20,
+                    )
+                ]
+            )
+        )
         #creacion de contenedores dinamicos
         self.container_list_1=[self.initial_container_1,]
         self.container_list_2=[self.initial_container_2,]
