@@ -101,9 +101,38 @@ class UI(ft.ResponsiveRow):
                 ]
             )
         )
+        #contenedores configuracion
+        self.settings_container_1 = ft.Container(
+            bgcolor=self.color_teal,
+            border_radius=20,
+            padding=20,
+            content=ft.Column(
+                
+                controls=[
+                    ft.Text("Configuracion - dia"),
+                    ft.Container(
+                        border_radius=20,
+                    )
+                ]
+            )
+        )
+        self.settings_container_2= ft.Container(
+            bgcolor=self.color_teal,
+            border_radius=20,
+            padding=20,
+            content=ft.Column(
+                
+                controls=[
+                    ft.Text("Configuracion- semana"),
+                    ft.Container(
+                        border_radius=20,
+                    )
+                ]
+            )
+        )
         #creacion de contenedores dinamicos
-        self.container_list_1=[self.initial_container_1,]
-        self.container_list_2=[self.initial_container_2,]
+        self.container_list_1=[self.initial_container_1,self.location_container_1,self.calendar_container_1,self.settings_container_1]
+        self.container_list_2=[self.initial_container_2,self.location_container_2,self.calendar_container_2,self.settings_container_2]
         #se encargar de ir cambiando el contenido de los contenedores dinamicos
         self.navigation_container1 = ft.Container(content=self.container_list_1[0], expand=True )
         self.navigation_container2 = ft.Container(content=self.container_list_2[0], expand=True )
