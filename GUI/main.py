@@ -164,7 +164,78 @@ class UI(ft.ResponsiveRow):
                                 ],
                             )
                         )
+                    ),
+                    ft.Container(
+                        
+                        border_radius=20,
+                        padding=10,
+                        expand=True,
+                        content=ft.Column(
+                            controls=[
+                                ft.Container(
+                                    content=ft.Text("Contenido de la columna 3"),
+                                ),
+                                ft.ResponsiveRow(
+                                    expand=True,
+                                    alignment=ft.MainAxisAlignment.SPACE_AROUND,
+                                    controls=[
+                                        ft.Container(
+                                            border_radius=20,
+                                            padding=5,
+                                            expand=True,
+                                            bgcolor=self.color_teal,
+                                            col=3,
+                                        ),
+                                        ft.Container(
+                                            border_radius=20,
+                                            padding=5,
+                                            expand=True,
+                                            bgcolor=self.color_teal,
+                                            col=3,
+                                        ),
+                                        ft.Container(
+                                            border_radius=20,
+                                            padding=5,
+                                            expand=True,
+                                            bgcolor=self.color_teal,
+                                            col=3,
+                                        ),
+                                        ft.Container(
+                                            border_radius=20,
+                                            padding=5,
+                                            expand=True,
+                                            bgcolor=self.color_teal,
+                                            col=3,
+                                        )
+                                    ]
+                                )
+                            ]
+                        )
+                    ),
+                ft.Container(
+                    bgcolor=self.color_teal,
+                    padding=5,
+                    border_radius=20,
+                    content=ft.Row(
+                        controls=[
+                            ft.Text("otras cosas"),
+                            ft.Dropdown(
+                                options=[
+                                ft.dropdown.Option("opcion 1"), 
+                                ft.dropdown.Option("opcion 2"),
+                                ft.dropdown.Option("opcion 3"),
+                                ft.dropdown.Option("opcion 4"),
+                                ]
+                            )
+                        ]
                     )
+                ),    
+                ft.Container(
+                    expand=True,
+                    border_radius=20,
+                    alignment=ft.alignment.center,
+
+                )
                 ]
             )
         )
