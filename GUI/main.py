@@ -239,7 +239,47 @@ class UI(ft.ResponsiveRow):
                     expand=True,
                     border_radius=20,
                     alignment=ft.alignment.center,
-
+                    content=ft.Column(
+                        scroll="auto",
+                        controls=[
+                            ft.ResponsiveRow(
+                                controls=[
+                                    ft.Container(
+                                        bgcolor=self.color_teal,
+                                        padding=5,
+                                        border_radius=10,
+                                        height=100 ,
+                                        col={"md":12, "lg":6 },
+                                        content=ft.Text("Contenedor 1")
+                                    ),
+                                    ft.Container(
+                                        bgcolor=self.color_teal,
+                                        padding=5,
+                                        border_radius=10,
+                                        height=100 ,
+                                        col={"md":12, "lg":6 },
+                                        content=ft.Text("Contenedor 1")
+                                    ),
+                                    ft.Container(
+                                        bgcolor=self.color_teal,
+                                        padding=5,
+                                        border_radius=10,
+                                        height=100 ,
+                                        col={"md":12, "lg":6 },
+                                        content=ft.Text("Contenedor 1")
+                                    ),
+                                    ft.Container(
+                                        bgcolor=self.color_teal,
+                                        padding=5,
+                                        border_radius=10,
+                                        height=100 ,
+                                        col={"md":12, "lg":6 },
+                                        content=ft.Text("Contenedor 1")
+                                    )
+                                ]
+                            )
+                        ]
+                    )
                 )
                 ]
             )
