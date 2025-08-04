@@ -43,6 +43,36 @@ class UI(ft.ResponsiveRow):
                 ]
             )
         )
+        #contenedores secundarios
+        self.location_container_1 = ft.Container(
+            bgcolor=self.color_teal,
+            border_radius=20,
+            padding=20,
+            content=ft.Column(
+                
+                controls=[
+                    ft.Text("Ubicacion - dia"),
+                    ft.Container(
+                        border_radius=20,
+                    )
+                ]
+            )
+        )
+        self.location_container_2= ft.Container(
+            bgcolor=self.color_teal,
+            border_radius=20,
+            padding=20,
+            content=ft.Column(
+                
+                controls=[
+                    ft.Text("Ubicacion- semana"),
+                    ft.Container(
+                        border_radius=20,
+                    )
+                ]
+            )
+        )
+        
         #creacion de contenedores dinamicos
         self.container_list_1=[self.initial_container_1,]
         self.container_list_2=[self.initial_container_2,]
