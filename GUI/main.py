@@ -144,11 +144,29 @@ class UI(ft.ResponsiveRow):
             )
         )
         self.frame_3 = ft.Container(
-        #configuracion columna 3
             col=5,
-           # bgcolor= ft.Colors.WHITE,
-            
-            content=ft.Column()
+            content=ft.Column(
+                controls=[
+                    ft.Container(
+                        padding=ft.padding.only(left=150),
+                        content=ft.Container(
+                            bgcolor=self.color_teal,
+                            border_radius=20,
+                            content=ft.Dropdown(
+                                border_radius=20,
+                                alignment=ft.alignment.center_right,
+                                hint_text="incio",
+                                options=[
+                                    ft.dropdown.Option("Inicio"),
+                                    ft.dropdown.Option("Configuracion"),
+                                    ft.dropdown.Option("Ayuda"),
+                                    ft.dropdown.Option("Salir")
+                                ],
+                            )
+                        )
+                    )
+                ]
+            )
         )
          # Agregamos los contenedores hijos directamente a self.controls
         self.controls.extend([
