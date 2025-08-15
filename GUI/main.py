@@ -154,6 +154,7 @@ class UI(ft.ResponsiveRow):
                         #configuracion del icono de navegacion
                         content= ft.NavigationRail(
                             #Configuracion del navegation rail
+                            on_change=self.change_page,
                             selected_index=0,
                             bgcolor= self.color_teal,
                             destinations=[
@@ -195,6 +196,7 @@ class UI(ft.ResponsiveRow):
                 ]
             )
         )
+            #segunda columna
         self.frame_2 = ft.Container(
         #configuracion columna 2
             col=6,
@@ -304,7 +306,7 @@ class UI(ft.ResponsiveRow):
                     padding=5,
                     border_radius=20,
                     content=ft.Row(
-                        alignment=ft.MainAxisAlignment.SPACE_AROUND,
+                        alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
                         controls=[
 
                             ft.Text("otras cosas"),
@@ -377,7 +379,10 @@ class UI(ft.ResponsiveRow):
             self.frame_2,
             self.frame_3
         ])
-   
+    def change_page(self, e):
+        index = e.control.selected_index #se obtiene el indice de los controles del menu lateral
+        print(index)
+    
 
 def main(page: ft.Page):
     #tamaño minimo de la ventana
