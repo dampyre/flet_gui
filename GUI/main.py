@@ -8,11 +8,13 @@ class UI(ft.ResponsiveRow):
         #control switch para cambiar el modo de la aplicacion
         self.mode_sw = ft.Switch(
             value=True,
+            
             thumb_color= "Black",
             thumb_icon={ft.ControlState.DEFAULT: ft.Icons.LIGHT_MODE,
                          ft.ControlState.SELECTED: ft.Icons.DARK_MODE},
             #configuracion del switch
-            on_change=lambda e: page.update()
+            #on_change=lambda e: page.update()
+            on_change= self.mode_change_update,
         )
         #Creacionde contenedor principal
         self.initial_container_1 = ft.Container(
@@ -382,7 +384,15 @@ class UI(ft.ResponsiveRow):
     def change_page(self, e):
         index = e.control.selected_index #se obtiene el indice de los controles del menu lateral
         print(index)
-    
+        self.initial_container_1.content = self.container_list_1[index].content
+        self.initial_container_2.content = self.container_list_2[index].content
+        self.update()
+    def mode_change_update(self,e):
+       if e.control.value:
+           self.page.theme_mode = ft.ThemeMode.DARK
+       else:
+           self.page.theme_mode = ft.ThemeMode.LIGHT
+       self.page.update()
 
 def main(page: ft.Page):
     #tamaño minimo de la ventana
@@ -390,6 +400,7 @@ def main(page: ft.Page):
     page.window_min_height = 600
     #tema por defecto del sistema 
     page.theme_mode = ft.ThemeMode.SYSTEM
+    page.theme = ft.Theme(font_family="Roboto", color_scheme_seed=ft.Colors.TEAL)
     page.add(UI(page))
 
 ft.app(target=main)
